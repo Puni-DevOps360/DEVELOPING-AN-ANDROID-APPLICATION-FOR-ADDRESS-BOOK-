@@ -23,8 +23,64 @@ The Address Book App is designed to store and display contact details such as a 
 8.Select the suitable available device to display the output. 22. Now run the application to see the output. 
 
 ## PROGRAM:
+MainActivity.java
 
+package com.example.myapplication;
+
+import android.os.Bundle;
+
+import android.widget.Button;
+
+import android.widget.EditText;
+
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+EditText name, phone;
+
+Button save;
+
+TextView output;
+
+@Override
+
+protected void onCreate(Bundle savedInstanceState) {
+
+super.onCreate(savedInstanceState);
+
+setContentView(R.layout.activity_main);
+
+name = findViewById(R.id.name);
+
+phone = findViewById(R.id.phone);
+
+save = findViewById(R.id.save);
+
+output = findViewById(R.id.output);
+
+save.setOnClickListener(v -> {
+
+String contact = "Name: " + name.getText().toString() + "\nPhone: " + phone.getText().toString();
+
+output.setText(contact);
+
+});
+
+}
+
+activity_main.xml
+
+<EditText android:id="@+id/phone" android:hint="Enter Phone" android:layout_width="match_parent" android:layout_height="wrap_content"
+
+android:inputType="phone"/>
+
+}
 ## OUTPUT:
+<img width="324" height="317" alt="image" src="https://github.com/user-attachments/assets/44eb27af-ccee-4283-a926-6874cf2ce76e" />
+
 
 
 
